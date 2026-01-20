@@ -75,8 +75,12 @@ userSchema.methods.generateAccessToken = function () {
 
     )
 }
+
+//*******   refresh secret key  *******
+
+
 userSchema.methods.generateSecretToken = function () {
-return jwt.sign(
+    return jwt.sign(
         {
             _id: this._id,
         },
