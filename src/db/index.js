@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
-import { DB_NAME } from "../constants.js";
+// import { DB_NAME } from "../constants.js";
 import dotenv from "dotenv"
 dotenv.config();
+
 async function connectDB() {
     try {
-        const connectionInstatnce = await mongoose.connect(`${process.env.MONGODB_URI}/ and name is : ${DB_NAME}`);
+        const connectionInstatnce = await mongoose.connect(process.env.MONGO_URI, {
+            dbName: "youTube",
+        })
         console.log(`\n MongoDB is connected !! DB Host: ${connectionInstatnce.connection.host}`);
 
     } catch (error) {
@@ -13,8 +16,7 @@ async function connectDB() {
 
     }
 }
-
-export default connectDB; 
+export default connectDB;
 
 
 //FIRST APPROACH TO CONNECT DB
@@ -41,5 +43,4 @@ const app =express();
     }
 
 })();*/
-
 

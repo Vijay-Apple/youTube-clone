@@ -1,17 +1,38 @@
 import express from 'express'
-import {cors} from 'cors'
+import cors from 'cors'
 import cookieParser from 'cookie-parser'
 
-const app =express();
+const app = express();
+
+//third -party middleware
 
 app.use(cors({
-    origin:process.env.CORS_ORIGIN,
-    Credential:true
+    origin: process.env.CORS_ORIGIN,
+    Credential: true
 }));
 
-app.use(express.json({limit:'16kb'}))
-app.use(express.urlencoded({extended:true,limit:"16kb"}))
+// built-in middlewares
+
+app.use(express.json({ limit: '16kb' }))
+app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(express.static("public"));
+
+//cookieparser
+
 app.use(cookieParser());
 
-export {app};
+//import routes
+import userRoutes from './routes/user.routes.js'
+
+//routes declaration
+app.use('/api/v1/users', userRoutes);
+
+
+// app.get("/test", (req, res) => {
+//     res.send("Api is working")
+// });
+
+export { app };
+
+
+

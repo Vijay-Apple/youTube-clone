@@ -1,8 +1,9 @@
+
 import mongoose from "mongoose";
 import connectDB from "./db/index.js";
-import express from "express";
-
-const app = express();
+import dotenv from "dotenv"
+import { app } from "./app.js";
+dotenv.config();
 
 connectDB()
 .then(()=>{

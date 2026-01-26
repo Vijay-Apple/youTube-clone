@@ -46,16 +46,16 @@ export const userSchema = new Schema(
 
 //FOR PASSWORD ENCRYPTED
 
-userSchema.pre("save", function (next) {
-    if (!this.isModified("password")) return next();
-    this.password = bcrypt.hash(this.password, 10)
-    next();
-})
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
+
+  this.password = await bcrypt.hash(this.password, 10);
+});
 
 /*******   COMPARE PASSWORD   ******* */
 
 userSchema.methods.isPasswordCorrect = async function (password) {
-    await bcrypt.compare(password, this.password)
+    return await bcrypt.compare(password, this.password)
 }
 
 // **** Access token secret
