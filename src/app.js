@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
-    Credential: true
+    credentials: true
 }));
 
 // built-in middlewares  json ,urlEncoded , static
