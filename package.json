@@ -1,16 +1,22 @@
 {
   "name": "myproject",
   "version": "1.0.0",
-  "description": "",
+  "description": "this  is a realistic project",
+  "keywords": [],
+  "homepage": "https://github.com/Vijay-Apple/youTube-clone#readme",
+  "bugs": {
+    "url": "https://github.com/Vijay-Apple/youTube-clone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vijay-Apple/youTube-clone.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
-  },
-  "devDependencies": {
-    "prettier": "^3.8.0"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -23,5 +29,8 @@
     "mongoose": "^9.1.4",
     "mongoose-aggregate-paginate-v2": "^1.1.4",
     "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.0"
   }
 }
