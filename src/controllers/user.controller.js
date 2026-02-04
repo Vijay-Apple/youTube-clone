@@ -6,7 +6,6 @@ import { uploadOnCloudinary } from '../utils/cloudinary.js'
 import { ApiResponse } from '../utils/apiResponse.js';
 import jwt from "jsonwebtoken"
 import mongoose from 'mongoose';
-// import { use } from 'react';
 
 
 
@@ -53,7 +52,7 @@ const generateAccessAndRefreshToken = async (userId) => {
    }
 
 }
-// getting user details
+// getting user details from frentend 
 
 const registerUser = asyncHandler(async (req, res) => {
    const { fullName, email, userName, password } = req.body;
@@ -471,6 +470,7 @@ const getWatchHistory = asyncHandler(async (req, res) => {
          )
       )
 })
+
 
 export {
    registerUser,
