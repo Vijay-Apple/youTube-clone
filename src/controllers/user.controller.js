@@ -125,7 +125,7 @@ const registerUser = asyncHandler(async (req, res) => {
 })
 
 const loginUser = asyncHandler(async (req, res) => {
-   // req.bidy->data,
+   // req.body->data,
    // get user details email,username
    // validation password ,username
    // accessToken.refreshToken
